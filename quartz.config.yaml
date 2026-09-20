@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "Аволар"
+  pageTitle: "Проклятье красной полосы"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Cinzel          # Эпичный RPG-шрифт для заголовков
-      body: Lora              # Классический книжный шрифт с засечками
-      code: Fira Code         # Читаемый шрифт для кода
+      header: Josefin Sans  # Геометрический Арт-деко шрифт (элегантность и строгость)
+      body: Jost            # Индустриальный шрифт начала 20-го века, без засечек
+      code: JetBrains Mono  # Строгий технический шрифт
     colors:
       lightMode:
-        light: "#F4EFE6"           # Фон: старый пергамент
-        lightgray: "#D2C2A3"       # Рамки: темный пергамент
-        gray: "#8F7B5E"            # Второстепенный текст / иконки
-        darkgray: "#4A3B32"        # Основной текст: темно-коричневые чернила
-        dark: "#2C1E16"            # Заголовки: почти черные чернила
-        secondary: "#8B1C1C"       # Акцент: цвет крови / темный рубин
-        tertiary: "#B8860B"        # Наведение: темное золото
-        highlight: rgba(184, 134, 11, 0.15) # Подсветка фона: легкое золото
-        textHighlight: "#8B1C1C44" # Подсветка текста
+        light: "#F5F4F0"           # Чистая матовая бумага (досье)
+        lightgray: "#E1DCE3"       # Светло-серый с легким фиолетовым отливом (рамки)
+        gray: "#857E94"            # Приглушенный фиолетово-серый (иконки/мета)
+        darkgray: "#2C2A35"        # Основной текст: цвет темного графита
+        dark: "#0B1528"            # Заголовки: очень темный синий
+        secondary: "#D4AF37"       # Золото (ссылки)
+        tertiary: "#C8102E"        # КРАСНАЯ ПОЛОСА (наведение/акценты)
+        highlight: rgba(30, 58, 138, 0.1) # Сине-фиолетовая легкая подсветка фона
+        textHighlight: "#C8102E33" # Выделение текста красным маркером
       darkMode:
-        light: "#110D12"           # Фон: цвет интерфейса BG3 (глубокий сливово-черный)
-        lightgray: "#2A2126"       # Рамки: темный металл/камень
-        gray: "#736468"            # Второстепенный текст / иконки
-        darkgray: "#C5B4A0"        # Основной текст: тусклый пергамент (не режет глаза)
-        dark: "#EFE1D1"            # Заголовки: светлый пергамент
-        secondary: "#D4AF37"       # Акцент: классическое золото BG3
-        tertiary: "#9D3232"        # Наведение: магический красный
-        highlight: rgba(212, 175, 55, 0.15) # Подсветка фона
-        textHighlight: "#D4AF3788" # Выделение текста золотом
+        light: "#0D0F16"           # Фон: Глубокий, нуарный сине-черный
+        lightgray: "#1C1E2A"       # Рамки: Темный графит с синевой
+        gray: "#544B66"            # Иконки/Границы: Тусклый фиолетовый
+        darkgray: "#D1CDD6"        # Основной текст: Читаемый светло-серый
+        dark: "#F4F1F8"            # Заголовки: Чистый, контрастный белый (Арт-деко стиль)
+        secondary: "#D4AF37"       # ЗОЛОТО (Ссылки, папки, графы)
+        tertiary: "#C8102E"        # КРАСНАЯ ПОЛОСА (Наведение, активные элементы)
+        highlight: rgba(107, 76, 173, 0.25) # Фиолетовая неоновая подсветка активных зон
+        textHighlight: "#D4AF3766" # Выделение текста золотым
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -96,7 +96,7 @@ plugins:
   - source: "@quartz-community/quartz-fonts"
     enabled: true
   - source: "@quartz-themes/core"
-    enabled: false # ВАЖНО: Отключено, чтобы заработали цвета BG3 из блока theme
+    enabled: false # ОСТАВЛЯЕМ ВЫКЛЮЧЕННЫМ, чтобы работали наши стили
     options:
       theme: its-theme
       variation: ttrpg-dnd
