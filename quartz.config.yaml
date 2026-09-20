@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Аволар
+  pageTitle: "Аволар"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: ru-RU
   baseUrl: avolar.github.io/quartz
   ignorePatterns:
     - private
@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Cinzel
-      body: Lora
-      code: Fira Code
+      header: Cinzel          # Эпичный RPG-шрифт для заголовков
+      body: Lora              # Классический книжный шрифт с засечками
+      code: Fira Code         # Читаемый шрифт для кода
     colors:
       lightMode:
-        light: "#F4EFE6"           # Цвет старого пергамента
-        lightgray: "#E5D9C5"       # Темный пергамент для рамок
-        gray: "#A68A64"            # Потертая латунь/золото
-        darkgray: "#4A3B32"        # Темно-коричневые чернила для вторичного текста
-        dark: "#2C1E16"            # Почти черные чернила для основного текста
-        secondary: "#8B1C1C"       # Глубокий красный (цвет фракций/крови)
-        tertiary: "#B8860B"        # Темное золото
-        highlight: rgba(184, 134, 11, 0.15) # Легкая золотая подсветка
-        textHighlight: "#8B1C1C44" # Красноватая подсветка текста
+        light: "#F4EFE6"           # Фон: старый пергамент
+        lightgray: "#D2C2A3"       # Рамки: темный пергамент
+        gray: "#8F7B5E"            # Второстепенный текст / иконки
+        darkgray: "#4A3B32"        # Основной текст: темно-коричневые чернила
+        dark: "#2C1E16"            # Заголовки: почти черные чернила
+        secondary: "#8B1C1C"       # Акцент: цвет крови / темный рубин
+        tertiary: "#B8860B"        # Наведение: темное золото
+        highlight: rgba(184, 134, 11, 0.15) # Подсветка фона: легкое золото
+        textHighlight: "#8B1C1C44" # Подсветка текста
       darkMode:
-        light: "#110D12"           # Очень темный сливово-черный (как UI в BG3)
-        lightgray: "#241C24"       # Слегка светлее для панелей
-        gray: "#594A4E"            # Приглушенные границы
-        darkgray: "#C5B4A0"        # Читаемый текст цвета тусклого пергамента
-        dark: "#EFE1D1"            # Яркий пергаментный для заголовков
-        secondary: "#D4AF37"       # Классическое золото BG3
-        tertiary: "#9D3232"        # Магический/кровавый красный
-        highlight: rgba(212, 175, 55, 0.15) # Золотая подсветка фона
-        textHighlight: "#d4af3788" # Яркое золото для выделения текста
+        light: "#110D12"           # Фон: цвет интерфейса BG3 (глубокий сливово-черный)
+        lightgray: "#2A2126"       # Рамки: темный металл/камень
+        gray: "#736468"            # Второстепенный текст / иконки
+        darkgray: "#C5B4A0"        # Основной текст: тусклый пергамент (не режет глаза)
+        dark: "#EFE1D1"            # Заголовки: светлый пергамент
+        secondary: "#D4AF37"       # Акцент: классическое золото BG3
+        tertiary: "#9D3232"        # Наведение: магический красный
+        highlight: rgba(212, 175, 55, 0.15) # Подсветка фона
+        textHighlight: "#D4AF3788" # Выделение текста золотом
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -77,12 +77,6 @@ plugins:
   - source: "@quartz-community/github-flavored-markdown"
     enabled: true
     order: 40
-  - source: "@quartz-community/table-of-contents"
-    enabled: true
-    order: 50
-    layout:
-      position: right
-      priority: 30
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:
@@ -96,30 +90,19 @@ plugins:
     options:
       renderEngine: katex
     order: 80
-  - source: "@quartz-community/citations"
-    enabled: false
-    order: 85
   - source: "@quartz-community/hard-line-breaks"
     enabled: true
     order: 90
-  - source: "@quartz-community/ox-hugo"
-    enabled: false
-    order: 91
-  - source: "@quartz-community/roam"
-    enabled: false
-    order: 92
   - source: "@quartz-community/quartz-fonts"
     enabled: true
   - source: "@quartz-themes/core"
-    enabled: true
+    enabled: false # ВАЖНО: Отключено, чтобы заработали цвета BG3 из блока theme
     options:
       theme: its-theme
-      variation: ttrpg-dnd # Этот плагин отлично дополнит новые цвета
+      variation: ttrpg-dnd
       mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
-  - source: "@quartz-community/explicit-publish"
-    enabled: false
   - source: "@quartz-community/unlisted-pages"
     enabled: true
     options: {}
@@ -131,12 +114,6 @@ plugins:
       passwordField: password
       unlistWhenEncrypted: false
       outputPath: static/encryptedContentIndex.json
-  - source: "@quartz-community/stacked-pages"
-    enabled: false
-    layout:
-      position: afterBody
-      priority: 50
-      display: all
   - source: "@quartz-community/alias-redirects"
     enabled: true
   - source: "@quartz-community/content-index"
@@ -158,115 +135,9 @@ plugins:
     enabled: true
   - source: "@quartz-community/tag-page"
     enabled: true
-  - source: "@quartz-community/explorer"
-    enabled: true
-    layout:
-      position: left
-      priority: 50
-  - source: "@quartz-community/graph"
-    enabled: true
-    layout:
-      position: right
-      priority: 10
-  - source: "@quartz-community/search"
-    enabled: true
-    layout:
-      position: left
-      priority: 20
-      group: toolbar
-      groupOptions:
-        grow: true
-  - source: "@quartz-community/backlinks"
-    enabled: true
-    layout:
-      position: right
-      priority: 50
-  - source: "@quartz-community/article-title"
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 10
-  - source: "@quartz-community/content-meta"
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 20
-  - source: "@quartz-community/tag-list"
-    enabled: false
-    layout:
-      position: beforeBody
-      priority: 30
-  - source: "@quartz-community/page-title"
-    enabled: true
-    layout:
-      position: left
-      priority: 10
-  - source: "@quartz-community/darkmode"
-    enabled: true
-    layout:
-      position: left
-      priority: 30
-      group: toolbar
-  - source: "@quartz-community/reader-mode"
-    enabled: true
-    layout:
-      position: left
-      priority: 35
-      group: toolbar
-  - source: "@quartz-community/breadcrumbs"
-    enabled: true
-    layout:
-      position: beforeBody
-      priority: 5
-      condition: not-index
-  - source: "@quartz-community/comments"
-    enabled: false
-    options:
-      provider: giscus
-      options: {}
-    layout:
-      position: afterBody
-      priority: 10
-  - source: "@quartz-community/footer"
-    enabled: true
-    options:
-      links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
-    layout:
-      position: footer
-      priority: 50
-  - source: "@quartz-community/recent-notes"
-    enabled: false
-  - source: "@quartz-community/spacer"
-    enabled: true
-    options: {}
-    order: 25
-    layout:
-      position: left
-      priority: 25
-      display: mobile-only
   - source: "@quartz-community/bases-page"
     enabled: true
-    options: {}
     order: 50
-  - source: "@quartz-community/note-properties"
-    enabled: true
-    options:
-      includeAll: false
-      includedProperties:
-        - description
-        - tags
-        - aliases
-      excludedProperties: []
-      hidePropertiesView: false
-      delimiters: ---
-      language: yaml
-    order: 5
-    layout:
-      position: beforeBody
-      priority: 15
-      display: all
   - source: github:Requiae/quartz-leaflet-bases-plugin
     enabled: true
     options:
@@ -278,10 +149,115 @@ plugins:
       darkMode: auto
       exportPadding: 20
     order: 50
+
+  # ================= РАСПОЛОЖЕНИЕ ЭЛЕМЕНТОВ (LAYOUT) =================
+  
+  # --- ЛЕВАЯ ПАНЕЛЬ ---
+  - source: "@quartz-community/page-title"
+    enabled: true
+    layout:
+      position: left
+      priority: 10
+  - source: "@quartz-community/search"
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      group: toolbar
+      groupOptions:
+        grow: true
+  - source: "@quartz-community/darkmode"
+    enabled: true
+    layout:
+      position: left
+      priority: 30
+      group: toolbar
+  - source: "@quartz-community/reader-mode"
+    enabled: true
+    layout:
+      position: left
+      priority: 40
+      group: toolbar
+  - source: "@quartz-community/explorer"
+    enabled: true
+    layout:
+      position: left
+      priority: 50
+
+  # --- ПРАВАЯ ПАНЕЛЬ ---
+  - source: "@quartz-community/graph"
+    enabled: true
+    layout:
+      position: right
+      priority: 10
+  - source: "@quartz-community/table-of-contents"
+    enabled: true
+    order: 50
+    layout:
+      position: right
+      priority: 20
+  - source: "@quartz-community/backlinks"
+    enabled: true
+    layout:
+      position: right
+      priority: 30
+
+  # --- ЦЕНТР (НАД ТЕКСТОМ) ---
+  - source: "@quartz-community/breadcrumbs"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10
+      condition: not-index
+  - source: "@quartz-community/article-title"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20
+  - source: "@quartz-community/note-properties"
+    enabled: true
+    options:
+      includeAll: false
+      includedProperties:
+        - description
+        - tags
+        - aliases
+      hidePropertiesView: false
+      delimiters: ---
+      language: yaml
+    order: 5
+    layout:
+      position: beforeBody
+      priority: 30
+      display: all
+  - source: "@quartz-community/content-meta"
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 40
+
+  # --- ПОДВАЛ И ПРОЧЕЕ ---
+  - source: "@quartz-community/spacer"
+    enabled: true
+    order: 25
+    layout:
+      position: left
+      priority: 25
+      display: mobile-only
+  - source: "@quartz-community/footer"
+    enabled: true
+    options:
+      links:
+        GitHub: https://github.com/jackyzha0/quartz
+        Discord Community: https://discord.gg/cRFFHYye7t
+    layout:
+      position: footer
+      priority: 10
+
 layout:
   groups:
     toolbar:
-      priority: 35
+      priority: 20
       direction: row
       gap: 0.5rem
   byPageType:
