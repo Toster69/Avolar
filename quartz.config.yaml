@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: ru-RU
-  baseUrl: avolar.github.io/quartz
+  baseUrl: toster69.github.io/avolar
   ignorePatterns:
     - private
     - templates
