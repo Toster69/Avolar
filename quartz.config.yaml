@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: Cinzel
+      body: Lora
+      code: Fira Code
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#F4EFE6"           # Цвет старого пергамента
+        lightgray: "#E5D9C5"       # Темный пергамент для рамок
+        gray: "#A68A64"            # Потертая латунь/золото
+        darkgray: "#4A3B32"        # Темно-коричневые чернила для вторичного текста
+        dark: "#2C1E16"            # Почти черные чернила для основного текста
+        secondary: "#8B1C1C"       # Глубокий красный (цвет фракций/крови)
+        tertiary: "#B8860B"        # Темное золото
+        highlight: rgba(184, 134, 11, 0.15) # Легкая золотая подсветка
+        textHighlight: "#8B1C1C44" # Красноватая подсветка текста
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#110D12"           # Очень темный сливово-черный (как UI в BG3)
+        lightgray: "#241C24"       # Слегка светлее для панелей
+        gray: "#594A4E"            # Приглушенные границы
+        darkgray: "#C5B4A0"        # Читаемый текст цвета тусклого пергамента
+        dark: "#EFE1D1"            # Яркий пергаментный для заголовков
+        secondary: "#D4AF37"       # Классическое золото BG3
+        tertiary: "#9D3232"        # Магический/кровавый красный
+        highlight: rgba(212, 175, 55, 0.15) # Золотая подсветка фона
+        textHighlight: "#d4af3788" # Яркое золото для выделения текста
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -114,7 +114,7 @@ plugins:
     enabled: true
     options:
       theme: its-theme
-      variation: ttrpg-dnd
+      variation: ttrpg-dnd # Этот плагин отлично дополнит новые цвета
       mode: both
   - source: "@quartz-community/remove-draft"
     enabled: true
