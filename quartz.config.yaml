@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "Проклятье красной полосы"
+  pageTitle: "База Знаний Аволара"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -16,8 +16,8 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Josefin Sans  # Геометрический Арт-деко шрифт (элегантность и строгость)
-      body: Jost            # Индустриальный шрифт начала 20-го века, без засечек
+      header: Forum  # Геометрический Арт-деко шрифт (элегантность и строгость)
+      body: Montserrat            # Индустриальный шрифт начала 20-го века, без засечек
       code: JetBrains Mono  # Строгий технический шрифт
     colors:
       lightMode:
